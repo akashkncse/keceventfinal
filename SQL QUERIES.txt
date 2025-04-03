@@ -1,0 +1,81 @@
+-- Create database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS kecevent;
+USE kecevent;
+
+-- Table structure for table `admin`
+CREATE TABLE IF NOT EXISTS `admin` (
+  `username` varchar(25) NOT NULL,
+  `password` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Table structure for table `event`
+CREATE TABLE IF NOT EXISTS `event` (
+  `name` varchar(25) NOT NULL,
+  `date` date NOT NULL,
+  `time` varchar(10) NOT NULL,
+  `participant` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Table structure for table `indreg`
+CREATE TABLE IF NOT EXISTS `indreg` (
+  `evename` varchar(25) NOT NULL,
+  `name` varchar(25) NOT NULL,
+  `grade` varchar(10) NOT NULL,
+  `year` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Table structure for table `login`
+CREATE TABLE IF NOT EXISTS `login` (
+  `username` varchar(25) NOT NULL,
+  `password` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Table structure for table `signin`
+CREATE TABLE IF NOT EXISTS `signin` (
+  `name` varchar(25) NOT NULL,
+  `username` varchar(25) NOT NULL,
+  `password` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Table structure for table `users` (from second file)
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Table structure for table `entries` (from second file)
+CREATE TABLE IF NOT EXISTS `entries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `eventname` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Table structure for table `events` (from second file)
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `eventname` varchar(255) NOT NULL,
+  `eventdate` date NOT NULL,
+  `eventime` time NOT NULL,
+  `bannerimage` varchar(255) DEFAULT NULL,
+  `reglink` varchar(255) DEFAULT NULL,
+  `host` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Table structure for table `gallery` (from second file)
+CREATE TABLE IF NOT EXISTS `gallery` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `eventname` varchar(255) NOT NULL,
+  `eventdate` date NOT NULL,
+  `imagepath` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `uploaded_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `eventname` (`eventname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
