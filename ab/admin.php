@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - KEC Events</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="keceventlogo.png" type="image/x-icon">
     <style>
@@ -272,18 +271,15 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Check for error parameter in URL when page loads
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.has('error')) {
                 const notification = document.getElementById('notification');
                 notification.classList.add('show');
-                
-                // Hide notification after 3 seconds
+
                 setTimeout(function(){
                     notification.classList.remove('show');
                 }, 3000);

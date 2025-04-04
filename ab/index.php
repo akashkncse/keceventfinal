@@ -50,7 +50,7 @@
                             <li class="list-group-item border-0 p-2"><a href="#blitz'25" class="text-decoration-none">Blitz'25</a></li>
                             <li class="list-group-item border-0 p-2"><a href="#classicalchess" class="text-decoration-none">Classical Chess</a></li>
                             <li class="list-group-item border-0 p-2"><a href="#cricket'25" class="text-decoration-none">Cricket'25</a></li>
-                            <li class="list-group-item border-0 p-2"><a href="#hockey" class="text-decoration-none">Hockey</a></li></ul>
+                            <li class="list-group-item border-0 p-2"><a href="#hockey" class="text-decoration-none">Hockey</a></li><li class="list-group-item border-0 p-2"><a href="#paperpresentation" class="text-decoration-none">Paper Presentation</a></li><li class="list-group-item border-0 p-2"><a href="#aiworkshop" class="text-decoration-none">AI Workshop</a></li></ul>
                     </div>
                     <div class="uevents mt-4">
                         <h2>Upcoming Events</h2>
@@ -76,7 +76,7 @@
                                     <h3 class="card-title">Logic Labyrinth 2025: The Hackathon Chronicles</h3>
                                     <p class="event-date text-primary fw-bold">April 15-16, 2025</p>
                                     <p class="card-text">Join us for the 24-hour hackathon at Kongu Engineering College—your gateway to innovation, creativity, and endless possibilities!</p>
-                                    <button type="button" class="btn btn-primary">Register Now</button>
+                                    <a href="indreg.php" class="btn btn-primary">Register Now</a>
                                 </div>
                             </div>
                         </div>
@@ -91,8 +91,7 @@
                                     <h3 class="card-title">Qubits Conclave 2025: A Paper Presentation on Quantum Computing</h3>
                                     <p class="event-date text-primary fw-bold">April 15, 2025</p>
                                     <p class="card-text">Step into the future of technology! Present your insights on quantum computers at Kongu Engineering College and make an impact in the world of innovation!</p>
-                                    <button type="button" class="btn btn-primary">Register Now</button>
-                                </div>
+                                    <a href="indreg.php" class="btn btn-primary">Register Now</a>                                </div>
                             </div>
                         </div>
                     </div>
@@ -255,7 +254,7 @@
             <div class="mt-2">
                 <a href="#privacy">Privacy Policy</a> | 
                 <a href="#terms">Terms of Use</a> | 
-                <a href="#contact">Contact Us</a>
+                <a href="contact.php">Contact Us</a>
             </div>
         </div>
     </footer>

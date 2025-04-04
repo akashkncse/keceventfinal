@@ -31,7 +31,7 @@
     <div class="content-wrapper">
         <div class="login-form">
             <h2>Event Registration form</h2>
-            <form action="inddreg.php" method="post">
+            <form action="indddreg.php" method="post">
                 <div class="form-group mb-3">
                     <label for="evename" class="form-label">Event Name</label>
                     <input type="text" id="evename" name="evename" class="form-control" required>

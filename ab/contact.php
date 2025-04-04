@@ -70,7 +70,7 @@
                             <p class="card-text"><strong>Name:</strong> Akash K N</p>
                             <p class="card-text"><strong>Email:</strong> akashknhobby@kongu.edu</p>
                             <p class="card-text"><strong>Phone:</strong> +91 91235 95045</p>
-                            <p class="card-text"><strong>Role:</strong> Technical Support, KECEvents</p>
+                            <p class="card-text"><strong>Role:</strong> Web Developer, KECEvents</p>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                             <p class="card-text"><strong>Name:</strong> Akilan S G</p>
                             <p class="card-text"><strong>Email:</strong> akilan@kongu.edu</p>
                             <p class="card-text"><strong>Phone:</strong> +91 70101 55514</p>
-                            <p class="card-text"><strong>Role:</strong> Student Coordinator, KECEvents</p>
+                            <p class="card-text"><strong>Role:</strong> Web Developer, KECEvents</p>
                         </div>
                     </div>
                 </div>
