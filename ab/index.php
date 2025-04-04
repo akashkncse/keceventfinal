@@ -50,7 +50,7 @@
                             <li class="list-group-item border-0 p-2"><a href="#blitz'25" class="text-decoration-none">Blitz'25</a></li>
                             <li class="list-group-item border-0 p-2"><a href="#classicalchess" class="text-decoration-none">Classical Chess</a></li>
                             <li class="list-group-item border-0 p-2"><a href="#cricket'25" class="text-decoration-none">Cricket'25</a></li>
-                            <li class="list-group-item border-0 p-2"><a href="#hockey" class="text-decoration-none">Hockey</a></li><li class="list-group-item border-0 p-2"><a href="#paperpresentation" class="text-decoration-none">Paper Presentation</a></li><li class="list-group-item border-0 p-2"><a href="#aiworkshop" class="text-decoration-none">AI Workshop</a></li></ul>
+                            <li class="list-group-item border-0 p-2"><a href="#hockey" class="text-decoration-none">Hockey</a></li><li class="list-group-item border-0 p-2"><a href="#paperpresentation" class="text-decoration-none">Paper Presentation</a></li><li class="list-group-item border-0 p-2"><a href="#aiworkshop" class="text-decoration-none">AI Workshop</a></li><li class="list-group-item border-0 p-2"><a href="#raaga'25" class="text-decoration-none">Raaga'25</a></li></ul>
                     </div>
                     <div class="uevents mt-4">
                         <h2>Upcoming Events</h2>

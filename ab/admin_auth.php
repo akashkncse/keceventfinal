@@ -1,21 +1,30 @@
 <?php
-
-include('connection.php');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
 
-$correct_username = "admin"; // Change this to your desired admin username
-$correct_password = "password123"; // Change this to your desired admin password
-$username = isset($_POST['username']) ? $_POST['username'] : '';
-$password = isset($_POST['password']) ? $_POST['password'] : '';
+if(isset($_POST['username']) && isset($_POST['password'])) {
 
-if ($username === $correct_username && $password === $correct_password) {
-    $_SESSION['admin_logged_in'] = true;
-    $_SESSION['admin_username'] = $username;
-    header("Location: eventregister.php");
-    exit;
+    $correct_username = "admin";
+    $correct_password = "password123";
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    if($username === $correct_username && $password === $correct_password) {
+
+        $_SESSION['admin_logged_in'] = true;
+        $_SESSION['admin_username'] = $username;
+        header("Location: eventregister.php");
+        exit;
+    } else {
+
+        header("Location: admin.php?error=1");
+        exit;
+    }
 } else {
-    $_SESSION['login_error'] = true;
-    header("Location: admin.php?error=1");
+
+    header("Location: admin.php");
     exit;
 }
 ?>

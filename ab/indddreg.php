@@ -11,23 +11,18 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$eventName = $_POST['evename'];
-$name = $_POST['name'];
-$grade = $_POST['grade'];
-$year = $_POST['year'];
+$eventName = mysqli_real_escape_string($conn, $_POST['evename']);
+$name = mysqli_real_escape_string($conn, $_POST['name']);
+$grade = mysqli_real_escape_string($conn, $_POST['grade']);
+$year = mysqli_real_escape_string($conn, $_POST['year']);
 
-$checkEvent = "SELECT * FROM event WHERE name = ?";
-$stmt = $conn->prepare($checkEvent);
-$stmt->bind_param("s", $eventName);
-$stmt->execute();
-$result = $stmt->get_result();
+$checkEvent = "SELECT * FROM event WHERE name = '$eventName'";
+$result = $conn->query($checkEvent);
 
 if ($result->num_rows > 0) {
-    $insertQuery = "INSERT INTO indreg (evename, name, grade, year) VALUES (?, ?, ?, ?)";
-    $insertStmt = $conn->prepare($insertQuery);
-    $insertStmt->bind_param("ssss", $eventName, $name, $grade, $year);
+    $insertQuery = "INSERT INTO indreg (evename, name, grade, year) VALUES ('$eventName', '$name', '$grade', '$year')";
     
-    if ($insertStmt->execute()) {
+    if ($conn->query($insertQuery) === TRUE) {
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -151,26 +146,23 @@ if ($result->num_rows > 0) {
                     <a href="#contact">Contact Us</a>
                 </div>
             </div>
-            
-            <!-- Bootstrap JS Bundle with Popper -->
+
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-            
-            <!-- JavaScript for auto-redirect after 30 seconds -->
+
             <script>
                 setTimeout(function() {
                     window.location.href = 'index.php';
-                }, 60000); // 30 seconds
+                }, 60000); 
             </script>
         </body>
         </html>
         <?php
     } else {
         echo "<script>
-            alert('Registration Failed: " . $insertStmt->error . "');
+            alert('Registration Failed: " . $conn->error . "');
             window.location.href = 'indreg.php';
         </script>";
     }
-    $insertStmt->close();
 } else {
     echo "<script>
         alert('Error: Event \"" . htmlspecialchars($eventName) . "\" does not exist!');
@@ -178,6 +170,5 @@ if ($result->num_rows > 0) {
     </script>";
 }
 
-$stmt->close();
 $conn->close();
 ?>
